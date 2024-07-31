@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            scroll-behavior: smooth; /* CSS native smooth scrolling */
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding-top: 5rem;
+        }
+        section {
+            padding: 2rem 0;
+        }
+        .about img {
+            max-width: 200px;
+            border-radius: 50%;
+            transition: transform 0.5s;
+        }
+        .about img:hover {
+            transform: scale(1.1);
+        }
+        .projects img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s;
+        }
+        .project-item {
+            margin: 1rem 0;
+        }
+        .project-item:hover img {
+            transform: scale(1.05);
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact form input, .contact form textarea {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact form button {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact form button:hover {
+            background: #555;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="about">
+            <div class="about">
+                <h2>About Me</h2>
+                <img src="https://fastly.picsum.photos/id/1/5000/3333.jpg?hmac=Asv2DU3rA_5D1xSe22xZK47WEAN0wjWeFOhzd13ujW4" alt="Your Photo">
+                <p>Hello! I'm [Your Name], a web developer with a passion for creating beautiful and functional websites. With [X] years of experience in the industry, I have honed my skills in HTML, CSS, JavaScript, and various web development frameworks.</p>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="projects">
+                <h2>Projects</h2>
+                <div class="project-item">
+                    <img src="https://fastly.picsum.photos/id/3/5000/3333.jpg?hmac=GDjZ2uNWE3V59PkdDaOzTOuV3tPWWxJSf4fNcxu4S2g" alt="Project 1">
+                    <h3>Project Title 1</h3>
+                    <p>Short description of the project. Mention the technologies used and the purpose of the project.</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDh8fHByb2plY3R8ZW58MHx8fHwxNjczNDcxMDU5&ixlib=rb-1.2.1&q=80&w=400" alt="Project 2">
+                    <h3>Project Title 2</h3>
+                    <p>Short description of the project. Mention the technologies used and the purpose of the project.</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHByb2plY3R8ZW58MHx8fHwxNjczNDcxMDU5&ixlib=rb-1.2.1&q=80&w=400" alt="Project 3">
+                    <h3>Project Title 3</h3>
+                    <p>Short description of the project. Mention the technologies used and the purpose of the project.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contact">
+                <h2>Contact Me</h2>
+                <form action="submit_form.php" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
